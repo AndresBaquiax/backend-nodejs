@@ -14,14 +14,15 @@ export const getUsuarios = async (req, res) => {
 };
 
 export const postUsuarios = async (req, res) => {
-    const { contrasena, email, nombre_completo, direccion, telefono, fecha_creacion, id_rol } = req.body;
-    let { estado } = req.body;
+    const { contrasena, email, nombre_completo, direccion, telefono, id_rol } = req.body;
+    let { estado, fecha_creacion } = req.body;
 
-    if (contrasena == null || email == null || nombre_completo == null || direccion == null || telefono == null || fecha_creacion == null || id_rol == null) {
+    if (contrasena == null || email == null || nombre_completo == null || direccion == null || telefono == null || id_rol == null) {
         return res.status(400).json({ msg: 'Mala peticion. Porfavor llenar todos los campos' });
     }
 
     if (estado == null) estado = 'True';
+    if (fecha_creacion == null) fecha_creacion = new Date();
 
     try {
         const pool = await getConnection()

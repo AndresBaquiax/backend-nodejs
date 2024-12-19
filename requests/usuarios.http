@@ -22,7 +22,6 @@ x-access-token: {{token}}
     "nombre_completo": "Andres Baquiax",
     "direccion": "02 calle",
     "telefono": "87654321",
-    "fecha_creacion": "2024-12-17",
     "id_rol": 2
 }
 
