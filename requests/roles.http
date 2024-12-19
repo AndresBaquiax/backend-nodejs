@@ -1,0 +1,40 @@
+@api = http://localhost:3000/roles
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzM0NjQ3MzY1LCJleHAiOjE3MzQ3MzM3NjV9.8N3HhZlQfx2fyJyl_nGdjXCITWeDjwfROyzT7dKV6M4
+
+//Obtener la categoria con id 
+GET {{api}}/2
+x-access-token: {{token}}
+
+###
+//Obtener todas los roles
+GET {{api}}
+x-access-token: {{token}}
+
+###
+//Insertar una categoria
+POST {{api}}
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "nombre_rol": "Prueba",
+    "nivel_acceso_rol": "1",
+    "estado": "1"
+}
+
+###
+//Actualizar una categoria
+PUT {{api}}/2
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "nombre_rol": "Cliente",
+    "nivel_acceso_rol": "2",
+    "estado": "1"
+}
+
+###
+//Cambiar estado de categoria
+DELETE {{api}}/3
+x-access-token: {{token}}

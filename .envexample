@@ -1,0 +1,8 @@
+node -e "console.log(require('crypto').randomBytes(64).toString('hex'))" EJECUTAR EN CONSOLA
+SECRET_KEY=Your secretKey
+PORT = 3000
+
+DB_USER = Your DB_USER
+DB_PASSWORD = Your DB_PASSWORD
+DB_SERVER = Your DB_SERVER
+DB_DATABASE = Your DB_DATABASE

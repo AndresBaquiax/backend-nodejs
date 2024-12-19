@@ -1,0 +1,38 @@
+@api = http://localhost:3000/Categorias
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzM0NjQ3MzY1LCJleHAiOjE3MzQ3MzM3NjV9.8N3HhZlQfx2fyJyl_nGdjXCITWeDjwfROyzT7dKV6M4
+
+//Obtener la categoria con id 
+GET {{api}}/1
+x-access-token: {{token}}
+
+###
+//Obtener todas las categorias
+GET {{api}}
+x-access-token: {{token}}
+
+###
+//Insertar una categoria
+POST {{api}}
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "nombre_categoria": "Categoría 4",
+    "estado": "1"
+}
+
+###
+//Actualizar una categoria
+PUT {{api}}/4
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "nombre_categoria": "Categoría 4",
+    "estado": "1"
+}
+
+###
+//Cambiar estado de categoria
+DELETE {{api}}/1
+x-access-token: {{token}}

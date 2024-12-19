@@ -1,0 +1,49 @@
+@api = http://localhost:3000/usuarios
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzM0NjQ3MzY1LCJleHAiOjE3MzQ3MzM3NjV9.8N3HhZlQfx2fyJyl_nGdjXCITWeDjwfROyzT7dKV6M4
+
+//Obtener el usuario con id 
+GET {{api}}/2
+x-access-token: {{token}}
+
+###
+//Obtener todas los usuarios
+GET {{api}}
+x-access-token: {{token}}
+
+###
+//Insertar un usuario
+POST {{api}}
+Content-Type: application/json
+x-access-token: {{token}}
+
+{
+    "contrasena": "admin",
+    "email": "admin2@admin.com",
+    "nombre_completo": "Andres Baquiax",
+    "direccion": "02 calle",
+    "telefono": "87654321",
+    "fecha_creacion": "2024-12-17",
+    "id_rol": 2
+}
+
+###
+//Actualizar un usuario
+PUT {{api}}/1
+Content-Type: application/json
+x-access-token: {{token}}
+
+{
+    "contrasena": "admin",
+    "email": "admin1@admin.com",
+    "nombre_completo": "Diego Baquiax",
+    "direccion": "01 calle",
+    "telefono": "12345678",
+    "fecha_creacion": "2024-12-17T00:00:00.000Z",
+    "estado": true,
+    "id_rol": 1
+}
+
+###
+//Cambiar estado de un usuario
+DELETE {{api}}/1
+x-access-token: {{token}}
